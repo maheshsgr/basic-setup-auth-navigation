@@ -36,17 +36,25 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio.
 
+## Default Login Credentials
+
+To access the application, use the following default login credentials:
+
+- **Username:** admin
+- **Password:** admin
+
 **_Screenshots_**:
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login.png width="200" height="400")
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_error.png width="200" height="400")
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/login.png" alt="Login" width="200" />
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_data.png?raw=true)
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/login_error.png" alt="Login Error" width="200" />
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_error_alert.png?raw=true)
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/login_data.png" alt="Login Data" width="200" />
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/post_list.png?raw=true)
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/login_error_alert.png" alt="Login Error Alert" width="200" />
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/post_list_more.png?raw=true)
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/post_list.png" alt="Post List" width="200" />
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/post_detail.png?raw=true)
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/post_list_more.png" alt="Post List More" width="200" />
+
+<img src="https://raw.githubusercontent.com/maheshsgr/basic-setup-auth-navigation/main/screenshots/post_detail.png" alt="Post Detail More" width="200" />
