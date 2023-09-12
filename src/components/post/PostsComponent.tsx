@@ -1,3 +1,4 @@
+import {PostDetailType} from '@/src/types';
 import React from 'react';
 import {
   View,
@@ -8,16 +9,11 @@ import {
   RefreshControl,
 } from 'react-native';
 
-interface Post {
-  id: number;
-  title: string;
-}
-
 interface PostsComponentProps {
-  posts: Post[];
+  posts: PostDetailType[];
   refreshing: boolean;
   onRefresh: () => void;
-  navigateToPost: (post: Post) => void;
+  navigateToPost: (post: PostDetailType) => void;
   loadMore: () => void;
 }
 

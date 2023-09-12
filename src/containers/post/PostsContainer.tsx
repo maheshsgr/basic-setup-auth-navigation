@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {PostsComponent} from 'src/components';
+import {useNavigation} from '@react-navigation/native';
+import {PostDetailType} from 'src/types';
 
 const PAGE_SIZE = 10; // Number of posts per page
 
 const PostsContainer: React.FC = () => {
-  const [posts, setPosts] = useState<Array<{id: number; title: string}>>([]);
+  const [posts, setPosts] = useState<Array<PostDetailType>>([]);
   const [page, setPage] = useState(1);
   const [refreshing, setRefreshing] = useState(false);
+  const navigation = useNavigation();
 
   useEffect(() => {
     fetchPosts();
@@ -34,8 +37,8 @@ const PostsContainer: React.FC = () => {
     setPage(prevPage => prevPage + 1);
   };
 
-  const navigateToPost = (post: {id: number; title: string}) => {
-    // Navigate logic here
+  const navigateToPost = (postDetail: PostDetailType) => {
+    navigation.navigate('PostDetail', {post: postDetail});
   };
 
   return (
