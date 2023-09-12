@@ -26,7 +26,6 @@ const PostsComponent: React.FC<PostsComponentProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Posts</Text>
       <TouchableOpacity
         style={styles.refreshButton}
         onPress={onRefresh}

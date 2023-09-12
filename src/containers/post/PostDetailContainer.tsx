@@ -29,7 +29,6 @@ const PostDetailContainer: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Post Detail</Text>
       {loading ? (
         <ActivityIndicator size="large" color="#007AFF" />
       ) : (
