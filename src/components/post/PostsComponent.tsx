@@ -1,4 +1,5 @@
-import {PostDetailType} from '@/src/types';
+import {ButtonPrimary} from 'src/atoms';
+import {PostDetailType} from 'src/types';
 import React from 'react';
 import {
   View,
@@ -26,14 +27,18 @@ const PostsComponent: React.FC<PostsComponentProps> = ({
 }) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.refreshButton}
-        onPress={onRefresh}
-        disabled={refreshing}>
-        <Text style={styles.buttonText}>
-          {refreshing ? 'Refreshing...' : 'Refresh'}
-        </Text>
-      </TouchableOpacity>
+      <View style={styles.headerButtons}>
+        <ButtonPrimary
+          onPress={onRefresh}
+          disabled={refreshing}
+          text={refreshing ? 'Refreshing...' : 'Refresh'}
+        />
+        <ButtonPrimary
+          onPress={onRefresh}
+          disabled={refreshing}
+          text={'Logout'}
+        />
+      </View>
       <FlatList
         data={posts}
         keyExtractor={item => item.id.toString()}
@@ -47,9 +52,7 @@ const PostsComponent: React.FC<PostsComponentProps> = ({
         refreshing={refreshing}
         onRefresh={onRefresh}
         ListFooterComponent={
-          <TouchableOpacity style={styles.loadMoreButton} onPress={loadMore}>
-            <Text style={styles.buttonText}>Load More</Text>
-          </TouchableOpacity>
+          <ButtonPrimary onPress={loadMore} text={'Load More'} />
         }
       />
     </View>
@@ -60,6 +63,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+  },
+  headerButtons: {
+    flexDirection: 'row',
+    width: '100%',
+    alignItems: 'stretch',
+    justifyContent: 'space-around',
+    padding: 8,
   },
   title: {
     fontSize: 24,
