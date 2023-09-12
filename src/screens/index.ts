@@ -1,3 +1,3 @@
 import LoginScreen from './auth/LoginScreen';
-
-export {LoginScreen};
+import PostScreen from './post/PostsScreen';
+export {LoginScreen, PostScreen};

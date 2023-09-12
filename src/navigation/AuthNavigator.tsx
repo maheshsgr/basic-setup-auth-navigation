@@ -15,4 +15,4 @@ const AuthNavigator: React.FC = () => {
   );
 };
 
-export {AuthNavigator};
+export default AuthNavigator;

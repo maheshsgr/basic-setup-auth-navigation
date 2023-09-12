@@ -1,3 +1,3 @@
 import LoginContainer from './auth/LoginContainer';
-
-export {LoginContainer};
+import PostsContainer from './post/PostsContainer';
+export {LoginContainer, PostsContainer};
