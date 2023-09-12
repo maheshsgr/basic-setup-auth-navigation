@@ -1,3 +1,3 @@
 import InputBox from './intraction/InputBox';
-
-export {InputBox};
+import ButtonPrimary from './intraction/ButtonPrimary';
+export {InputBox, ButtonPrimary};

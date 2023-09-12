@@ -1,19 +1,10 @@
 import React, {useEffect} from 'react';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Animated,
-  Easing,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import {View, Text, Animated, Easing, StyleSheet, Image} from 'react-native';
 import {useForm, Controller} from 'react-hook-form';
 import {LoginFormData} from 'src/types/Forms';
 import {Images} from 'src/assets';
 import LinearGradient from 'react-native-linear-gradient';
-import {InputBox} from 'src/atoms';
+import {InputBox, ButtonPrimary} from 'src/atoms';
 
 interface Props {
   onSubmit: (formData: LoginFormData) => void;
@@ -116,13 +107,7 @@ const LoginComponent: React.FC<Props> = ({onSubmit, control, errors}) => {
           rules={{required: true}}
         />
         {errors.password && <Text>This field is required.</Text>}
-        <TouchableOpacity
-          style={styles.loginButton}
-          onPress={() => {
-            handleLogin();
-          }}>
-          <Text style={styles.loginButtonText}>Login</Text>
-        </TouchableOpacity>
+        <ButtonPrimary onPress={handleLogin} text={'Login'} />
       </View>
     </LinearGradient>
   );
@@ -147,16 +132,6 @@ const styles = StyleSheet.create({
     width: 200,
     height: 65.2,
     marginBottom: 40,
-  },
-  loginButton: {
-    backgroundColor: '#0d6efd',
-    padding: 10,
-    borderRadius: 5,
-  },
-  loginButtonText: {
-    color: 'white',
-    fontSize: 18,
-    textAlign: 'center',
   },
 });
 
