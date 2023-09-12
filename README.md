@@ -35,3 +35,18 @@ yarn android
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ shortly provided you have set up your emulator correctly.
 
 This is one way to run your app — you can also run it directly from within Android Studio.
+
+**_Screenshots_**:
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login.png?raw=true)
+
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_error.png?raw=true)
+
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_data.png?raw=true)
+
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_error_alert.png?raw=true)
+
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/post_list.png?raw=true)
+
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/post_list_more.png?raw=true)
+
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/post_detail.png?raw=true)
