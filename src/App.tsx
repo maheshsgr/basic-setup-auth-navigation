@@ -25,6 +25,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import {AuthProvider} from './contexts/AuthContext';
+import {RootNavigator} from './navigation/RootNavigator';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -35,6 +36,7 @@ function App(): JSX.Element {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    flex: 1,
   };
 
   return (
@@ -43,7 +45,9 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
-      <AuthProvider />
+      <AuthProvider>
+        <RootNavigator />
+      </AuthProvider>
     </SafeAreaView>
   );
 }
