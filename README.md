@@ -37,9 +37,9 @@ If everything is set up _correctly_, you should see your new app running in your
 This is one way to run your app — you can also run it directly from within Android Studio.
 
 **_Screenshots_**:
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login.png?raw=true)
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login.png width="200" height="400")
 
-![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_error.png?raw=true)
+![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_error.png width="200" height="400")
 
 ![Screenshot](https://github.com/maheshsgr/basic-setup-auth-navigation/blob/main/screenshots/login_data.png?raw=true)
 
