@@ -19,16 +19,19 @@ const LoginContainer: React.FC = () => {
   const onSubmit = (data: LoginFormData) => {
     console.log('onSubmit', data);
     // Check if username and password are valid (you can replace this with your logic)
-    if (data.username === 'yourUsername' && data.password === 'yourPassword') {
-      // Simulate a successful login and store the token
-      //   login('myAuthToken');
+    if (data.username === 'admin' && data.password === 'admin') {
+      login(data);
     } else {
       Alert.alert('Login Failed', 'Invalid username or password');
     }
   };
 
   return (
-    <LoginComponent onSubmit={onSubmit} control={control} errors={errors} />
+    <LoginComponent
+      handleSubmit={handleSubmit(onSubmit)}
+      control={control}
+      errors={errors}
+    />
   );
 };
 

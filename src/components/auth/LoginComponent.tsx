@@ -7,58 +7,17 @@ import LinearGradient from 'react-native-linear-gradient';
 import {InputBox, ButtonPrimary} from 'src/atoms';
 
 interface Props {
-  onSubmit: (formData: LoginFormData) => void;
+  handleSubmit: () => void;
   control: any;
   errors: any;
 }
-const LoginComponent: React.FC<Props> = ({onSubmit, control, errors}) => {
+const LoginComponent: React.FC<Props> = ({handleSubmit, control, errors}) => {
   useEffect(() => {
     startAnimation();
   }, []);
+
+  //animation block
   const translateY = new Animated.Value(0);
-
-  const handleLogin = () => {
-    // if (
-    //   username === 'yourHardcodedUsername' &&
-    //   password === 'yourHardcodedPassword'
-    // )
-    if (false) {
-      // signIn(username);
-    } else {
-      // Shake animation on login failure
-      Animated.sequence([
-        Animated.timing(translateY, {
-          toValue: 10,
-          duration: 50,
-          easing: Easing.linear,
-          useNativeDriver: true,
-        }),
-        Animated.timing(translateY, {
-          toValue: -10,
-          duration: 50,
-          easing: Easing.linear,
-          useNativeDriver: true,
-        }),
-        Animated.timing(translateY, {
-          toValue: 10,
-          duration: 50,
-          easing: Easing.linear,
-          useNativeDriver: true,
-        }),
-        Animated.timing(translateY, {
-          toValue: 0,
-          duration: 50,
-          easing: Easing.linear,
-          useNativeDriver: true,
-        }),
-      ]).start();
-
-      // Show login failed message
-      setTimeout(() => {
-        alert('Login Failed: Invalid username or password');
-      }, 400);
-    }
-  };
 
   const startAnimation = () => {
     translateY.setValue(-10); // Initial position off the screen
@@ -85,13 +44,13 @@ const LoginComponent: React.FC<Props> = ({onSubmit, control, errors}) => {
               placeholder="Username"
               onChangeText={field.onChange}
               value={field.value}
+              error={errors.username}
             />
           )}
           name="username"
           defaultValue=""
-          rules={{required: true}}
+          rules={{required: 'Username is required'}}
         />
-        {errors.username && <Text>This field is required.</Text>}
         <Controller
           control={control}
           render={({field}) => (
@@ -100,14 +59,14 @@ const LoginComponent: React.FC<Props> = ({onSubmit, control, errors}) => {
               onChangeText={field.onChange}
               secureTextEntry
               value={field.value}
+              error={errors.password}
             />
           )}
           name="password"
           defaultValue=""
-          rules={{required: true}}
+          rules={{required: 'Password is required'}}
         />
-        {errors.password && <Text>This field is required.</Text>}
-        <ButtonPrimary onPress={handleLogin} text={'Login'} />
+        <ButtonPrimary onPress={handleSubmit} text={'Login'} />
       </View>
     </LinearGradient>
   );
