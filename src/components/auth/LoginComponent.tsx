@@ -120,7 +120,6 @@ const LoginComponent: React.FC<Props> = ({onSubmit, control, errors}) => {
           style={styles.loginButton}
           onPress={() => {
             handleLogin();
-            startAnimation();
           }}>
           <Text style={styles.loginButtonText}>Login</Text>
         </TouchableOpacity>
@@ -147,6 +146,7 @@ const styles = StyleSheet.create({
   logoImage: {
     width: 200,
     height: 65.2,
+    marginBottom: 40,
   },
   loginButton: {
     backgroundColor: '#0d6efd',
