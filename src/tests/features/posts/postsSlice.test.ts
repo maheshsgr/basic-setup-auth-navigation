@@ -1,12 +1,15 @@
-import {fetchPostsStart, fetchPostsSuccess, refreshPosts} from './postsSlice'; // Import your Redux actions
+import {
+  fetchPostsStart,
+  fetchPostsSuccess,
+  refreshPosts,
+} from 'src/features/posts/postsSlice';
 
 test('fetchPostsStart action creator', () => {
   const action = fetchPostsStart();
   expect(action.type).toEqual('posts/fetchPostsStart');
 });
 
-// Example for testing Redux reducers
-import postsReducer, {initialState} from './postsSlice'; // Import your Redux reducer and initial state
+import postsReducer, {initialState} from 'src/features/posts/postsSlice';
 
 test('postsReducer should handle fetchPostsStart', () => {
   const action = fetchPostsStart();

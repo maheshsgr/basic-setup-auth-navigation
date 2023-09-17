@@ -6,7 +6,7 @@ import {
   fetchPostsFailure,
 } from './postsSlice';
 
-function* fetchPostsAsync(action: any) {
+export function* fetchPostsAsync(action: any) {
   try {
     const {page} = action.payload;
     const posts = yield fetchPosts(page);
