@@ -13,7 +13,7 @@ const PostsContainer: React.FC = () => {
   const navigation = useNavigation();
 
   // const {posts, getPosts, refreshPosts, refreshing} = usePosts();
-  const {posts, refreshing, loadMore, refresh} = usePosts();
+  const {posts, refreshing, loadMore, refresh, error} = usePosts();
   const {logout} = useAuth();
 
   const navigateToPost = (postDetail: PostDetailType) => {
@@ -28,6 +28,7 @@ const PostsContainer: React.FC = () => {
       navigateToPost={navigateToPost}
       loadMore={loadMore}
       logout={logout}
+      error={error}
     />
   );
 };

@@ -1,6 +1,10 @@
 import {put, takeLatest} from 'redux-saga/effects';
 import {fetchPosts} from '../../api/postsApi';
-import {fetchPostsStart, fetchPostsSuccess} from './postsSlice';
+import {
+  fetchPostsStart,
+  fetchPostsSuccess,
+  fetchPostsFailure,
+} from './postsSlice';
 
 function* fetchPostsAsync(action: any) {
   try {
@@ -9,6 +13,7 @@ function* fetchPostsAsync(action: any) {
     yield put(fetchPostsSuccess(posts));
   } catch (error) {
     // Handle error
+    yield put(fetchPostsFailure(error.message));
   }
 }
 

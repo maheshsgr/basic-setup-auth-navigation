@@ -8,6 +8,8 @@ interface PostsState {
   posts: PostDetailType[];
   page: number;
   refreshing: boolean;
+  loading: boolean;
+  error: string;
 }
 
 export type {PostDetailType, PostsState};

@@ -7,7 +7,7 @@ import {fetchPostsStart, refreshPosts} from '../features/posts/postsSlice';
 
 const usePosts = () => {
   const dispatch = useDispatch();
-  const {posts, page, refreshing} = useSelector(
+  const {posts, page, refreshing, error} = useSelector(
     (state: RootState) => state.posts,
   );
 
@@ -31,7 +31,7 @@ const usePosts = () => {
     }
   };
 
-  return {posts, page, refreshing, loadMore, refresh};
+  return {posts, page, refreshing, loadMore, refresh, error};
 };
 
 export default usePosts;

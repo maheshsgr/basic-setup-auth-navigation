@@ -17,6 +17,7 @@ interface PostsComponentProps {
   navigateToPost: (post: PostDetailType) => void;
   loadMore: () => void;
   logout: () => void;
+  error: string;
 }
 
 const PostsComponent: React.FC<PostsComponentProps> = ({
@@ -26,11 +27,13 @@ const PostsComponent: React.FC<PostsComponentProps> = ({
   navigateToPost,
   loadMore,
   logout,
+  error,
 }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerButtons}>
         <ButtonPrimary onPress={logout} disabled={refreshing} text={'Logout'} />
+        {error && <Text>{error}</Text>}
       </View>
       <FlatList
         data={posts}
