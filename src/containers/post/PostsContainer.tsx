@@ -4,6 +4,7 @@ import {PostsComponent} from 'src/components';
 import {useNavigation} from '@react-navigation/native';
 import {PostDetailType} from 'src/types';
 import {usePosts} from 'src/hooks';
+import {useAuth} from 'src/contexts/AuthContext';
 
 const PAGE_SIZE = 10; // Number of posts per page
 
@@ -11,7 +12,9 @@ const PostsContainer: React.FC = () => {
   type PostsType = PostDetailType[];
   const navigation = useNavigation();
 
-  const {posts, getPosts, refreshPosts, refreshing} = usePosts();
+  // const {posts, getPosts, refreshPosts, refreshing} = usePosts();
+  const {posts, refreshing, loadMore, refresh} = usePosts();
+  const {logout} = useAuth();
 
   const navigateToPost = (postDetail: PostDetailType) => {
     navigation.navigate('PostDetail', {post: postDetail});
@@ -21,9 +24,10 @@ const PostsContainer: React.FC = () => {
     <PostsComponent
       posts={posts}
       refreshing={refreshing}
-      onRefresh={refreshPosts}
+      onRefresh={refresh}
       navigateToPost={navigateToPost}
-      loadMore={getPosts}
+      loadMore={loadMore}
+      logout={logout}
     />
   );
 };

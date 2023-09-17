@@ -4,4 +4,10 @@ type PostDetailType = {
   body: string;
 };
 
-export type {PostDetailType};
+interface PostsState {
+  posts: PostDetailType[];
+  page: number;
+  refreshing: boolean;
+}
+
+export type {PostDetailType, PostsState};

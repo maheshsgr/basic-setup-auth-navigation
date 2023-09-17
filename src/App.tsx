@@ -12,6 +12,8 @@ import {SafeAreaView, StatusBar} from 'react-native';
 import {Colors} from 'src/constants';
 import {AuthProvider} from './contexts/AuthContext';
 import {RootNavigator} from './navigation/RootNavigator';
+import store from 'src/store/configureStore';
+import {Provider} from 'react-redux';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -26,7 +28,9 @@ function App(): JSX.Element {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={'light-content'} backgroundColor={Colors.Primary} />
       <AuthProvider>
-        <RootNavigator />
+        <Provider store={store}>
+          <RootNavigator />
+        </Provider>
       </AuthProvider>
     </SafeAreaView>
   );

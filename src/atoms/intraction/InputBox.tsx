@@ -15,7 +15,6 @@ const InputBox: React.FC<Props> = ({
   secureTextEntry,
   error,
 }) => {
-  console.log('Error', error);
   return (
     <View style={styles.container}>
       <TextInput

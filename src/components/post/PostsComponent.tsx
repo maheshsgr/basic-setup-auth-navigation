@@ -16,6 +16,7 @@ interface PostsComponentProps {
   onRefresh: () => void;
   navigateToPost: (post: PostDetailType) => void;
   loadMore: () => void;
+  logout: () => void;
 }
 
 const PostsComponent: React.FC<PostsComponentProps> = ({
@@ -24,20 +25,12 @@ const PostsComponent: React.FC<PostsComponentProps> = ({
   onRefresh,
   navigateToPost,
   loadMore,
+  logout,
 }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerButtons}>
-        <ButtonPrimary
-          onPress={onRefresh}
-          disabled={refreshing}
-          text={refreshing ? 'Refreshing...' : 'Refresh'}
-        />
-        <ButtonPrimary
-          onPress={onRefresh}
-          disabled={refreshing}
-          text={'Logout'}
-        />
+        <ButtonPrimary onPress={logout} disabled={refreshing} text={'Logout'} />
       </View>
       <FlatList
         data={posts}
@@ -51,9 +44,8 @@ const PostsComponent: React.FC<PostsComponentProps> = ({
         )}
         refreshing={refreshing}
         onRefresh={onRefresh}
-        ListFooterComponent={
-          <ButtonPrimary onPress={loadMore} text={'Load More'} />
-        }
+        onEndReached={loadMore}
+        onEndReachedThreshold={0.1}
       />
     </View>
   );

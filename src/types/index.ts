@@ -1,3 +1,3 @@
-import {PostDetailType} from './ApiData';
+import {PostDetailType, PostsState} from './ApiData';
 
-export type {PostDetailType};
+export type {PostDetailType, PostsState};
